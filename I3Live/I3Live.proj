@@ -40,7 +40,7 @@
     <Resource Include="App_Resources\iOS\Icon-Small-50@2x.png" />
     <Resource Include="App_Resources\iOS\Default.png" />
     <Resource Include="App_Resources\iOS\Default@2x.png" />
-  <Resource Include="App_Resources\iOS\Default-568h@2x.png" />
+    <Resource Include="App_Resources\iOS\Default-568h@2x.png" />
     <Resource Include="App_Resources\iOS\Default-Portrait.png" />
     <Resource Include="App_Resources\iOS\Default-Landscape.png" />
     <Resource Include="App_Resources\iOS\Default-Portrait@2x.png" />
@@ -52,6 +52,9 @@
     <Resource Include="App_Resources\Android\drawable-ldpi\icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="base.html" />
+    <Content Include="media\img\live-icon.png" />
+    <Content Include="styles\base.css" />
     <Content Include="index.html" />
     <Content Include="kendo\js\jquery.min.js" />
     <Content Include="kendo\js\kendo.mobile.min.js" />

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//END">
+<html lang="en">
+<head>
+ {% if meta_refresh %}<meta http-equiv="refresh" content="{{meta_refresh}}" />{% endif %}
+ <title>IceCube Live {% block title %}{% endblock %}</title>
+ <link rel="stylesheet" type="text/css"  href="/live/media/css/site.css" />
+ <link rel="stylesheet" type="text/css"  href="/live/media/css/timepicker-addon.css" />
+ <link type="text/css"  href="/live/media/css/redmond/jquery-ui-1.8.24.custom.css" rel="Stylesheet" />
+ <link rel="stylesheet" type="text/css"  href="/live/media/css/i3_moni.css" />
+ <link rel="icon"       type="image/png" href="/live/media/img/live-icon.png"/>
+ <script type="text/javascript" src="/live/media/js/jquery-1.8.2.min.js"></script>
+ <script type="text/javascript" src="/live/media/js/jquery.cookie.js"></script>
+ <script type="text/javascript" src="/live/media/js/jquery.json-2.3.min.js"></script>
+ <script type="text/javascript" src="/live/media/js/jquery-ui-1.8.24.custom.min.js"></script>
+ <script type="text/javascript" src="/live/media/js/jquery-ui-timepicker-addon.js"></script>
+ <script type="text/javascript" src="/live/media/js/jquery_timer.js" ></script>
+ <script type="text/javascript" src="/live/media/js/jquery.jclock.js" ></script>
+ <script type="text/javascript" src="/live/media/js/jquery.event.drag-1.5.min.js" ></script>
+ <script type="text/javascript" src="/live/media/js/jquery.mousewheel.min.js" ></script>
+ <script type="text/javascript" src="/live/media/js/jquery.tablehover.pack.js" ></script>
+ <script type="text/javascript" src="/live/media/js/live-util.js" ></script>
+ <script type="text/javascript" src="/live/media/js/live-ajax.js" ></script>
+ <script type="text/javascript" src="/live/media/js/jquery.tablesorter.min.js" ></script>
+ <script type="text/javascript" src="/live/media/js/jquery.rightClick.js" ></script>
+ <script type="text/javascript" src="/live/media/js/jquery.tools.min.js"></script>
+ <script type="text/javascript">
+    $(function($) {
+      $('.jclock').jclock({ utc: true,
+                            format: '%A, %B %d, %Y %H:%M:%S UTC' });
+    });
+ </script>
+</head>
+<body class="{{ session.cluster }}">
+ <!-- frame killer javascript -->
+ <!-- taken from: -- >
+ <!-- http://cdn.ly.tl/publications/ -->
+ <!-- busting-frame-busting-a-study-of-clickjacking-vulnerabilities-on-popular-sites.pdf -->
+ <style> html{display : none ; } </style>
+ <script type="text/javascript">
+   if( self == top ) {
+       document.documentElement.style.display = 'block' ;
+   } else {
+       top.location = self.location;
+   }
+ </script>
+ <div id="header">
+  <div id="branding">
+   <h1 id="site-name"><a href="/">IceCube Live</a></h1>
+   <span class="version">{{ version }}</span>
+   <span id="livebar"><span class="jclock"></span></span>
+  </div>
+ </div>
+ <div id="content-main">
+  {% block maincontent %}{% endblock %} 
+ </div>
+</body>
+</html>
